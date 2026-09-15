@@ -3,27 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CONTROLE DE ESTOQUE | ALICE ANTUNES</title>
+  <title>ESTRUTURAS DE REPETIÇÃO | ALICE ANTUNES</title>
   <style>
-    html, body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3e8ff; }
-    #root { display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100%; padding: 20px; box-sizing: border-box; }
-    .card-formulario { width: 100%; max-width: 450px; padding: 30px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12); display: flex; flex-direction: column; gap: 15px; box-sizing: border-box; }
-    .card-formulario h2 { margin: 0 0 10px 0; color: #5b21b6; font-size: 1.25rem; text-align: center; font-weight: 700; }
-    .card-formulario input { width: 100%; padding: 12px 14px; border: 1px solid #e9d5ff; border-radius: 6px; font-size: 0.95rem; outline: none; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; }
-    .card-formulario input:focus { border-color: #7c3aed; box-shadow: 0 0 6px rgba(124, 58, 237, 0.25); }
-    .card-formulario button { width: 100%; padding: 12px; background-color: #7c3aed; color: #ffffff; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s; }
-    .card-formulario button:hover { background-color: #6d28d9; }
-    .Resultado { margin-top: 10px; padding: 16px; background-color: #faf5ff; border-left: 5px solid #7c3aed; border-radius: 6px; display: flex; flex-direction: column; gap: 8px; max-height: 400px; overflow-y: auto; }
-    .Resultado div { margin: 0; color: #4c1d95; font-size: 0.95rem; font-weight: 600; }
-    
-    /* Estilo para os títulos dos exercícios na tela */
-    .titulo-ex { color: #5b21b6; font-weight: 700; margin-top: 10px; border-bottom: 1px solid #e9d5ff; padding-bottom: 2px; }
+    html, body { 
+      margin: 0; 
+      padding: 0; 
+      width: 100%; 
+      height: 100%; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background-color: #f3e8ff; 
+    }
+    #root { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      width: 100%; 
+      padding: 20px; 
+      box-sizing: border-box; 
+    }
+    .card-formulario { 
+      width: 100%; 
+      max-width: 450px; 
+      padding: 30px; 
+      background-color: #ffffff; 
+      border-radius: 12px; 
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12); 
+      display: flex; 
+      flex-direction: column; 
+      gap: 15px; 
+      box-sizing: border-box; 
+    }
+    .card-formulario h2 { 
+      margin: 0 0 10px 0; 
+      color: #5b21b6; 
+      font-size: 1.25rem; 
+      text-align: center; 
+      font-weight: 700; 
+    }
+    .card-formulario input { 
+      width: 100%; 
+      padding: 12px 14px; 
+      border: 1px solid #e9d5ff; 
+      border-radius: 6px; 
+      font-size: 0.95rem; 
+      outline: none; 
+      box-sizing: border-box; 
+      transition: border-color 0.2s, box-shadow 0.2s; 
+    }
+    .card-formulario input:focus { 
+      border-color: #7c3aed; 
+      box-shadow: 0 0 6px rgba(124, 58, 237, 0.25); 
+    }
+    .card-formulario button { 
+      width: 100%; 
+      padding: 12px; 
+      background-color: #7c3aed; 
+      color: #ffffff; 
+      border: none; 
+      border-radius: 6px; 
+      font-size: 0.95rem; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: background-color 0.2s; 
+    }
+    .card-formulario button:hover { 
+      background-color: #6d28d9; 
+    }
+    .Resultado { 
+      margin-top: 10px; 
+      padding: 16px; 
+      background-color: #faf5ff; 
+      border-left: 5px solid #7c3aed; 
+      border-radius: 6px; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 8px; 
+      max-height: 450px; 
+      overflow-y: auto; 
+    }
+    .Resultado div { 
+      margin: 0; 
+      color: #4c1d95; 
+      font-size: 0.95rem; 
+      font-weight: 600; 
+    }
+
+    .titulo-exercicio {
+      color: #5b21b6;
+      font-weight: 700;
+      margin-top: 12px;
+      border-bottom: 1px solid #e9d5ff;
+      padding-bottom: 2px;
+    }
   </style>
 </head>
 <body>
   <div id="root">
     <div class="card-formulario">
-      <h2>CONTROLE DE ESTOQUE | ALICE ANTUNES</h2>
+      <h2>ESTRUTURAS DE REPETIÇÃO | ALICE ANTUNES</h2>
       <div class="Resultado">
         <div id="resultado"></div>
       </div>
@@ -34,85 +112,85 @@
     document.addEventListener('DOMContentLoaded', () => {
       const painel = document.getElementById('resultado');
 
-      function exibir(texto, ehTitulo = false) {
+      function exibirTexto(texto, ehTitulo = false) {
         const div = document.createElement('div');
         if (ehTitulo) {
-          div.className = 'titulo-ex';
+          div.className = 'titulo-exercicio';
         }
         div.textContent = texto;
         painel.appendChild(div);
       }
 
       // EXERCÍCIO 1
-      exibir("EXERCÍCIO 1", true);
+      exibirTexto("EXERCÍCIO 1", true);
       for (let i = 1; i <= 10; i++) {
-        exibir(i);
+        exibirTexto(i);
       }
 
       // EXERCÍCIO 2
-      exibir("EXERCÍCIO 2", true);
+      exibirTexto("EXERCÍCIO 2", true);
       let numero = 5;
       for (let i = 1; i <= 10; i++) {
-        exibir(numero + " x " + i + " = " + (numero * i));
+        exibirTexto(numero + " x " + i + " = " + (numero * i));
       }
 
       // EXERCÍCIO 3
-      exibir("EXERCÍCIO 3", true);
+      exibirTexto("EXERCÍCIO 3", true);
       let num3 = 1;
       let soma3 = 0;
       while (num3 <= 100) {
         soma3 = soma3 + num3;
         num3++;
       }
-      exibir("A soma é: " + soma3);
+      exibirTexto("A soma é: " + soma3);
 
       // EXERCÍCIO 4
-      exibir("EXERCÍCIO 4", true);
+      exibirTexto("EXERCÍCIO 4", true);
       let num4 = 0;
       while (num4 <= 20) {
-        exibir(num4);
+        exibirTexto(num4);
         num4 = num4 + 2;
       }
 
       // EXERCÍCIO 5
-      exibir("EXERCÍCIO 5", true);
+      exibirTexto("EXERCÍCIO 5", true);
       let cont5 = 10;
       do {
-        exibir(cont5);
+        exibirTexto(cont5);
         cont5--;
       } while (cont5 >= 1);
 
       // EXERCÍCIO 6
-      exibir("EXERCÍCIO 6", true);
+      exibirTexto("EXERCÍCIO 6", true);
       let usuario = {
-        nome: "Alice",
+        nome: "Lucas",
         idade: 25,
         cidade: "Salvador"
       };
       for (let chave in usuario) {
-        exibir(chave + ": " + usuario[chave]);
+        exibirTexto(chave + ": " + usuario[chave]);
       }
 
       // EXERCÍCIO 7
-      exibir("EXERCÍCIO 7", true);
+      exibirTexto("EXERCÍCIO 7", true);
       let notas = [7.0, 8.5, 9.0, 7.5];
       let soma7 = 0;
       for (let nota of notas) {
         soma7 = soma7 + nota;
       }
       let media = soma7 / notas.length;
-      exibir("A média é: " + media);
+      exibirTexto("A média é: " + media);
 
       // EXERCÍCIO 8
-      exibir("EXERCÍCIO 8", true);
+      exibirTexto("EXERCÍCIO 8", true);
       for (let i = 1; i <= 50; i = i + 2) {
-        exibir(i);
+        exibirTexto(i);
       }
 
       // EXERCÍCIO 9
-      exibir("EXERCÍCIO 9", true);
+      exibirTexto("EXERCÍCIO 9", true);
       for (let i = 10; i >= 0; i--) {
-        exibir(i);
+        exibirTexto(i);
       }
     });
   </script>
