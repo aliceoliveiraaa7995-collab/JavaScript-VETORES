@@ -5,96 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ESTRUTURAS DE REPETIÇÃO | ALICE ANTUNES</title>
   <style>
-    html, body { 
-      margin: 0; 
-      padding: 0; 
-      width: 100%; 
-      height: 100%; 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      background-color: #f3e8ff; 
-    }
-    #root { 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      min-height: 100vh; 
-      width: 100%; 
-      padding: 20px; 
-      box-sizing: border-box; 
-    }
-    .card-formulario { 
-      width: 100%; 
-      max-width: 450px; 
-      padding: 30px; 
-      background-color: #ffffff; 
-      border-radius: 12px; 
-      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12); 
-      display: flex; 
-      flex-direction: column; 
-      gap: 15px; 
-      box-sizing: border-box; 
-    }
-    .card-formulario h2 { 
-      margin: 0 0 10px 0; 
-      color: #5b21b6; 
-      font-size: 1.25rem; 
-      text-align: center; 
-      font-weight: 700; 
-    }
-    .card-formulario input { 
-      width: 100%; 
-      padding: 12px 14px; 
-      border: 1px solid #e9d5ff; 
-      border-radius: 6px; 
-      font-size: 0.95rem; 
-      outline: none; 
-      box-sizing: border-box; 
-      transition: border-color 0.2s, box-shadow 0.2s; 
-    }
-    .card-formulario input:focus { 
-      border-color: #7c3aed; 
-      box-shadow: 0 0 6px rgba(124, 58, 237, 0.25); 
-    }
-    .card-formulario button { 
-      width: 100%; 
-      padding: 12px; 
-      background-color: #7c3aed; 
-      color: #ffffff; 
-      border: none; 
-      border-radius: 6px; 
-      font-size: 0.95rem; 
-      font-weight: 600; 
-      cursor: pointer; 
-      transition: background-color 0.2s; 
-    }
-    .card-formulario button:hover { 
-      background-color: #6d28d9; 
-    }
-    .Resultado { 
-      margin-top: 10px; 
-      padding: 16px; 
-      background-color: #faf5ff; 
-      border-left: 5px solid #7c3aed; 
-      border-radius: 6px; 
-      display: flex; 
-      flex-direction: column; 
-      gap: 8px; 
-      max-height: 450px; 
-      overflow-y: auto; 
-    }
-    .Resultado div { 
-      margin: 0; 
-      color: #4c1d95; 
-      font-size: 0.95rem; 
-      font-weight: 600; 
-    }
-
-    .titulo-exercicio {
-      color: #5b21b6;
-      font-weight: 700;
-      margin-top: 12px;
-      border-bottom: 1px solid #e9d5ff;
-      padding-bottom: 2px;
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3e8ff; }
+    #root { display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100%; padding: 20px; box-sizing: border-box; }
+    .card-formulario { width: 100%; max-width: 450px; padding: 30px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12); display: flex; flex-direction: column; gap: 15px; box-sizing: border-box; max-height: 90vh; overflow-y: auto; }
+    .card-formulario h2 { margin: 0 0 10px 0; color: #5b21b6; font-size: 1.25rem; text-align: center; font-weight: 700; }
+    .card-formulario input { width: 100%; padding: 12px 14px; border: 1px solid #e9d5ff; border-radius: 6px; font-size: 0.95rem; outline: none; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; }
+    .card-formulario input:focus { border-color: #7c3aed; box-shadow: 0 0 6px rgba(124, 58, 237, 0.25); }
+    .card-formulario button { width: 100%; padding: 12px; background-color: #7c3aed; color: #ffffff; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s; }
+    .card-formulario button:hover { background-color: #6d28d9; }
+    .Resultado { margin-top: 10px; padding: 16px; background-color: #faf5ff; border-left: 5px solid #7c3aed; border-radius: 6px; display: flex; flex-direction: column; gap: 8px; max-height: 250px; overflow-y: auto; }
+    .Resultado div { margin: 0; color: #4c1d95; font-size: 0.95rem; font-weight: 600; }
+    
+    /* Container para organizar os botões dos exercícios */
+    .botoes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
     }
   </style>
 </head>
@@ -102,97 +28,119 @@
   <div id="root">
     <div class="card-formulario">
       <h2>ESTRUTURAS DE REPETIÇÃO | ALICE ANTUNES</h2>
+      
+      <div class="botoes-grid">
+        <button onclick="verResposta(1)">Exercício 1</button>
+        <button onclick="verResposta(2)">Exercício 2</button>
+        <button onclick="verResposta(3)">Exercício 3</button>
+        <button onclick="verResposta(4)">Exercício 4</button>
+        <button onclick="verResposta(5)">Exercício 5</button>
+        <button onclick="verResposta(6)">Exercício 6</button>
+        <button onclick="verResposta(7)">Exercício 7</button>
+        <button onclick="verResposta(8)">Exercício 8</button>
+        <button onclick="verResposta(9)">Exercício 9</button>
+      </div>
+
       <div class="Resultado">
-        <div id="resultado"></div>
+        <div id="resultado">Clique em um dos botões acima para visualizar a resposta.</div>
       </div>
     </div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function verResposta(numeroExercicio) {
       const painel = document.getElementById('resultado');
+      painel.innerHTML = ''; // Limpa o resultado anterior
 
-      function exibirTexto(texto, ehTitulo = false) {
+      function adicionarLinha(texto) {
         const div = document.createElement('div');
-        if (ehTitulo) {
-          div.className = 'titulo-exercicio';
-        }
         div.textContent = texto;
         painel.appendChild(div);
       }
 
-      // EXERCÍCIO 1
-      exibirTexto("EXERCÍCIO 1", true);
-      for (let i = 1; i <= 10; i++) {
-        exibirTexto(i);
-      }
+      switch (numeroExercicio) {
+        case 1:
+          adicionarLinha("--- EXERCÍCIO 1 (1 a 10) ---");
+          for (let i = 1; i <= 10; i++) {
+            adicionarLinha(i);
+          }
+          break;
 
-      // EXERCÍCIO 2
-      exibirTexto("EXERCÍCIO 2", true);
-      let numero = 5;
-      for (let i = 1; i <= 10; i++) {
-        exibirTexto(numero + " x " + i + " = " + (numero * i));
-      }
+        case 2:
+          adicionarLinha("--- EXERCÍCIO 2 (Tabuada do 5) ---");
+          let numero = 5;
+          for (let i = 1; i <= 10; i++) {
+            adicionarLinha(numero + " x " + i + " = " + (numero * i));
+          }
+          break;
 
-      // EXERCÍCIO 3
-      exibirTexto("EXERCÍCIO 3", true);
-      let num3 = 1;
-      let soma3 = 0;
-      while (num3 <= 100) {
-        soma3 = soma3 + num3;
-        num3++;
-      }
-      exibirTexto("A soma é: " + soma3);
+        case 3:
+          adicionarLinha("--- EXERCÍCIO 3 (Soma 1 a 100) ---");
+          let num3 = 1;
+          let soma3 = 0;
+          while (num3 <= 100) {
+            soma3 = soma3 + num3;
+            num3++;
+          }
+          adicionarLinha("A soma é: " + soma3);
+          break;
 
-      // EXERCÍCIO 4
-      exibirTexto("EXERCÍCIO 4", true);
-      let num4 = 0;
-      while (num4 <= 20) {
-        exibirTexto(num4);
-        num4 = num4 + 2;
-      }
+        case 4:
+          adicionarLinha("--- EXERCÍCIO 4 (Pares de 0 a 20) ---");
+          let num4 = 0;
+          while (num4 <= 20) {
+            adicionarLinha(num4);
+            num4 = num4 + 2;
+          }
+          break;
 
-      // EXERCÍCIO 5
-      exibirTexto("EXERCÍCIO 5", true);
-      let cont5 = 10;
-      do {
-        exibirTexto(cont5);
-        cont5--;
-      } while (cont5 >= 1);
+        case 5:
+          adicionarLinha("--- EXERCÍCIO 5 (Regressiva 10 a 1) ---");
+          let cont5 = 10;
+          do {
+            adicionarLinha(cont5);
+            cont5--;
+          } while (cont5 >= 1);
+          break;
 
-      // EXERCÍCIO 6
-      exibirTexto("EXERCÍCIO 6", true);
-      let usuario = {
-        nome: "Lucas",
-        idade: 25,
-        cidade: "Salvador"
-      };
-      for (let chave in usuario) {
-        exibirTexto(chave + ": " + usuario[chave]);
-      }
+        case 6:
+          adicionarLinha("--- EXERCÍCIO 6 (Objeto Usuário) ---");
+          let usuario = {
+            nome: "Lucas",
+            idade: 25,
+            cidade: "Salvador"
+          };
+          for (let chave in usuario) {
+            adicionarLinha(chave + ": " + usuario[chave]);
+          }
+          break;
 
-      // EXERCÍCIO 7
-      exibirTexto("EXERCÍCIO 7", true);
-      let notas = [7.0, 8.5, 9.0, 7.5];
-      let soma7 = 0;
-      for (let nota of notas) {
-        soma7 = soma7 + nota;
-      }
-      let media = soma7 / notas.length;
-      exibirTexto("A média é: " + media);
+        case 7:
+          adicionarLinha("--- EXERCÍCIO 7 (Média das Notas) ---");
+          let notas = [7.0, 8.5, 9.0, 7.5];
+          let soma7 = 0;
+          for (let nota of notas) {
+            soma7 = soma7 + nota;
+          }
+          let media = soma7 / notas.length;
+          adicionarLinha("A média é: " + media);
+          break;
 
-      // EXERCÍCIO 8
-      exibirTexto("EXERCÍCIO 8", true);
-      for (let i = 1; i <= 50; i = i + 2) {
-        exibirTexto(i);
-      }
+        case 8:
+          adicionarLinha("--- EXERCÍCIO 8 (Ímpares de 1 a 50) ---");
+          for (let i = 1; i <= 50; i = i + 2) {
+            adicionarLinha(i);
+          }
+          break;
 
-      // EXERCÍCIO 9
-      exibirTexto("EXERCÍCIO 9", true);
-      for (let i = 10; i >= 0; i--) {
-        exibirTexto(i);
+        case 9:
+          adicionarLinha("--- EXERCÍCIO 9 (Regressiva 10 a 0) ---");
+          for (let i = 10; i >= 0; i--) {
+            adicionarLinha(i);
+          }
+          break;
       }
-    });
+    }
   </script>
 </body>
 </html>
