@@ -5,234 +5,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CONTROLE DE ESTOQUE | ALICE ANTUNES</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f3e8ff;
-    }
-
-    #root {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      width: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .card-formulario {
-      width: 100%;
-      max-width: 500px;
-      padding: 30px;
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12);
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      box-sizing: border-box;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-
-    .card-formulario h2 {
-      margin: 0 0 10px 0;
-      color: #5b21b6;
-      font-size: 1.25rem;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .card-formulario input {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #e9d5ff;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      outline: none;
-      box-sizing: border-box;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .card-formulario input:focus {
-      border-color: #7c3aed;
-      box-shadow: 0 0 6px rgba(124, 58, 237, 0.25);
-    }
-
-    .card-formulario button {
-      width: 100%;
-      padding: 12px;
-      background-color: #7c3aed;
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    .card-formulario button:hover {
-      background-color: #6d28d9;
-    }
-
-    .Resultado {
-      margin-top: 10px;
-      padding: 16px;
-      background-color: #faf5ff;
-      border-left: 5px solid #7c3aed;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .Resultado div {
-      margin: 0;
-      color: #4c1d95;
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    /* Estilos extras para organizar os exercícios */
-    .bloco-exercicio {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding-bottom: 15px;
-      border-bottom: 1px dashed #e9d5ff;
-    }
-
-    .bloco-exercicio label {
-      color: #5b21b6;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3e8ff; }
+    #root { display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100%; padding: 20px; box-sizing: border-box; }
+    .card-formulario { width: 100%; max-width: 450px; padding: 30px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12); display: flex; flex-direction: column; gap: 15px; box-sizing: border-box; }
+    .card-formulario h2 { margin: 0 0 10px 0; color: #5b21b6; font-size: 1.25rem; text-align: center; font-weight: 700; }
+    .card-formulario input { width: 100%; padding: 12px 14px; border: 1px solid #e9d5ff; border-radius: 6px; font-size: 0.95rem; outline: none; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; }
+    .card-formulario input:focus { border-color: #7c3aed; box-shadow: 0 0 6px rgba(124, 58, 237, 0.25); }
+    .card-formulario button { width: 100%; padding: 12px; background-color: #7c3aed; color: #ffffff; border: none; border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s; }
+    .card-formulario button:hover { background-color: #6d28d9; }
+    .Resultado { margin-top: 10px; padding: 16px; background-color: #faf5ff; border-left: 5px solid #7c3aed; border-radius: 6px; display: flex; flex-direction: column; gap: 8px; max-height: 400px; overflow-y: auto; }
+    .Resultado div { margin: 0; color: #4c1d95; font-size: 0.95rem; font-weight: 600; }
+    
+    /* Estilo para os títulos dos exercícios na tela */
+    .titulo-ex { color: #5b21b6; font-weight: 700; margin-top: 10px; border-bottom: 1px solid #e9d5ff; padding-bottom: 2px; }
   </style>
 </head>
 <body>
-
   <div id="root">
     <div class="card-formulario">
-      <h2>ATIVIDADE DE VETORES | ALICE ANTUNES</h2>
-
-      <!-- EXERCÍCIO 1 -->
-      <div class="bloco-exercicio">
-        <label for="ex1">1. Qual é a saída do laço de 1 a 10?</label>
-        <input id="ex1" type="text" placeholder="Digite a resposta (ex: 1, 2, 3...)">
-        <button onclick="conferir(1, '1, 2, 3, 4, 5, 6, 7, 8, 9, 10')">Verificar Exercício 1</button>
-        <div class="Resultado">
-          <div id="res-1">Aguardando resposta...</div>
-        </div>
+      <h2>CONTROLE DE ESTOQUE | ALICE ANTUNES</h2>
+      <div class="Resultado">
+        <div id="resultado"></div>
       </div>
-
-      <!-- EXERCÍCIO 2 -->
-      <div class="bloco-exercicio">
-        <label for="ex2">2. Qual o resultado final da tabuada de 5 (5 x 10)?</label>
-        <input id="ex2" type="text" placeholder="Digite a resposta">
-        <button onclick="conferir(2, '50')">Verificar Exercício 2</button>
-        <div class="Resultado">
-          <div id="res-2">Aguardando resposta...</div>
-        </div>
-      </div>
-
-      <!-- EXERCÍCIO 3 -->
-      <div class="bloco-exercicio">
-        <label for="ex3">3. Qual é a soma total de 1 até 100?</label>
-        <input id="ex3" type="text" placeholder="Digite a soma">
-        <button onclick="conferir(3, '5050')">Verificar Exercício 3</button>
-        <div class="Resultado">
-          <div id="res-3">Aguardando resposta...</div>
-        </div>
-      </div>
-
-      <!-- EXERCÍCIO 4 -->
-      <div class="bloco-exercicio">
-        <label for="ex4">4. Quais são os números pares de 0 até 20?</label>
-        <input id="ex4" type="text" placeholder="Digite a resposta (ex: 0, 2, 4...)">
-        <button onclick="conferir(4, '0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20')">Verificar Exercício 4</button>
-        <div class="Resultado">
-          <div id="res-4">Aguardando resposta...</div>
-        </div>
-      </div>
-
-      <!-- EXERCÍCIO 5 -->
-      <div class="bloco-exercicio">
-        <label for="ex5">5. Qual é a contagem regressiva de 10 a 1?</label>
-        <input id="ex5" type="text" placeholder="Digite a resposta (ex: 10, 9, 8...)">
-        <button onclick="conferir(5, '10, 9, 8, 7, 6, 5, 4, 3, 2, 1')">Verificar Exercício 5</button>
-        <div class="Resultado">
-          <div id="res-5">Aguardando resposta...</div>
-        </div>
-      </div>
-
-      <!-- EXERCÍCIO 6 -->
-      <div class="bloco-exercicio">
-        <label for="ex6">6. Qual é a cidade cadastrada no objeto usuário?</label>
-        <input id="ex6" type="text" placeholder="Digite o nome da cidade">
-        <button onclick="conferir(6, 'salvador')">Verificar Exercício 6</button>
-        <div class="Resultado">
-          <div id="res-6">Aguardando resposta...</div>
-        </div>
-      </div>
-
-      <!-- EXERCÍCIO 7 -->
-      <div class="bloco-exercicio">
-        <label for="ex7">7. Qual é a média final das notas [7.0, 8.5, 9.0, 7.5]?</label>
-        <input id="ex7" type="text" placeholder="Digite a média">
-        <button onclick="conferir(7, '8')">Verificar Exercício 7</button>
-        <div class="Resultado">
-          <div id="res-7">Aguardando resposta...</div>
-        </div>
-      </div>
-
-      <!-- EXERCÍCIO 8 -->
-      <div class="bloco-exercicio">
-        <label for="ex8">8. Quais são os números ímpares de 1 até 50?</label>
-        <input id="ex8" type="text" placeholder="Digite a resposta (ex: 1, 3, 5...)">
-        <button onclick="conferir(8, '49')">Verificar Exercício 8</button>
-        <div class="Resultado">
-          <div id="res-8">Aguardando resposta...</div>
-        </div>
-      </div>
-
-      <!-- EXERCÍCIO 9 -->
-      <div class="bloco-exercicio">
-        <label for="ex9">9. Qual é a contagem regressiva de 10 até 0?</label>
-        <input id="ex9" type="text" placeholder="Digite a resposta (ex: 10, 9... 0)">
-        <button onclick="conferir(9, '10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0')">Verificar Exercício 9</button>
-        <div class="Resultado">
-          <div id="res-9">Aguardando resposta...</div>
-        </div>
-      </div>
-
     </div>
   </div>
 
   <script>
-    function conferir(num, respostaCorreta) {
-      const input = document.getElementById(`ex${num}`);
-      const divRes = document.getElementById(`res-${num}`);
-      const valor = input.value.trim().toLowerCase();
+    document.addEventListener('DOMContentLoaded', () => {
+      const painel = document.getElementById('resultado');
 
-      if (valor === '') {
-        divRes.textContent = 'Por favor, insira uma resposta.';
-        divRes.style.color = '#dc2626';
-        return;
+      function exibir(texto, ehTitulo = false) {
+        const div = document.createElement('div');
+        if (ehTitulo) {
+          div.className = 'titulo-ex';
+        }
+        div.textContent = texto;
+        painel.appendChild(div);
       }
 
-      if (valor === respostaCorreta.toLowerCase() || valor.includes(respostaCorreta.toLowerCase())) {
-        divRes.textContent = 'Resposta Correta! 🎉';
-        divRes.style.color = '#15803d';
-      } else {
-        divRes.textContent = `Resposta Incorreta. Tente novamente!`;
-        divRes.style.color = '#dc2626';
+      // EXERCÍCIO 1
+      exibir("EXERCÍCIO 1", true);
+      for (let i = 1; i <= 10; i++) {
+        exibir(i);
       }
-    }
+
+      // EXERCÍCIO 2
+      exibir("EXERCÍCIO 2", true);
+      let numero = 5;
+      for (let i = 1; i <= 10; i++) {
+        exibir(numero + " x " + i + " = " + (numero * i));
+      }
+
+      // EXERCÍCIO 3
+      exibir("EXERCÍCIO 3", true);
+      let num3 = 1;
+      let soma3 = 0;
+      while (num3 <= 100) {
+        soma3 = soma3 + num3;
+        num3++;
+      }
+      exibir("A soma é: " + soma3);
+
+      // EXERCÍCIO 4
+      exibir("EXERCÍCIO 4", true);
+      let num4 = 0;
+      while (num4 <= 20) {
+        exibir(num4);
+        num4 = num4 + 2;
+      }
+
+      // EXERCÍCIO 5
+      exibir("EXERCÍCIO 5", true);
+      let cont5 = 10;
+      do {
+        exibir(cont5);
+        cont5--;
+      } while (cont5 >= 1);
+
+      // EXERCÍCIO 6
+      exibir("EXERCÍCIO 6", true);
+      let usuario = {
+        nome: "Alice",
+        idade: 25,
+        cidade: "Salvador"
+      };
+      for (let chave in usuario) {
+        exibir(chave + ": " + usuario[chave]);
+      }
+
+      // EXERCÍCIO 7
+      exibir("EXERCÍCIO 7", true);
+      let notas = [7.0, 8.5, 9.0, 7.5];
+      let soma7 = 0;
+      for (let nota of notas) {
+        soma7 = soma7 + nota;
+      }
+      let media = soma7 / notas.length;
+      exibir("A média é: " + media);
+
+      // EXERCÍCIO 8
+      exibir("EXERCÍCIO 8", true);
+      for (let i = 1; i <= 50; i = i + 2) {
+        exibir(i);
+      }
+
+      // EXERCÍCIO 9
+      exibir("EXERCÍCIO 9", true);
+      for (let i = 10; i >= 0; i--) {
+        exibir(i);
+      }
+    });
   </script>
 </body>
 </html>
