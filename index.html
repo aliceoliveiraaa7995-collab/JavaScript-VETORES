@@ -1,19 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Exercícios na Tela</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
-        h2 { color: #2c3e50; border-bottom: 2px solid #ddd; margin-top: 30px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXERCÍCIOS RESOLVIDOS | ALICE ANTUNES</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3e8ff;
+    }
+
+    #root {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card-formulario {
+      width: 100%;
+      max-width: 550px;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      box-sizing: border-box;
+    }
+
+    .card-formulario h2 {
+      margin: 0 0 10px 0;
+      color: #5b21b6;
+      font-size: 1.25rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .Resultado {
+      margin-top: 10px;
+      padding: 16px;
+      background-color: #faf5ff;
+      border-left: 5px solid #7c3aed;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .Resultado h3 {
+      margin: 10px 0 4px 0;
+      color: #5b21b6;
+      font-size: 1rem;
+      border-bottom: 1px solid #e9d5ff;
+      padding-bottom: 4px;
+    }
+
+    .Resultado div {
+      margin: 0;
+      color: #4c1d95;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .linha-resultado {
+      background-color: #ffffff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid #e9d5ff;
+      font-family: monospace;
+      font-size: 0.9rem !important;
+    }
+  </style>
 </head>
 <body>
-    <h1>Resultados dos Exercícios</h1>
 
-    <!-- O JavaScript vai jogar todo o texto aqui dentro -->
-    <div id="conteudo"></div>
+  <div id="root">
+    <div class="card-formulario">
+      <h2>EXERCÍCIOS RESOLVIDOS | ALICE ANTUNES</h2>
+      <div class="Resultado">
+        <div id="resultado"></div>
+      </div>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const divResultado = document.getElementById('resultado');
+
+      function adicionarTitulo(texto) {
+        const h3 = document.createElement('h3');
+        h3.textContent = texto;
+        divResultado.appendChild(h3);
+      }
+
+      function adicionarLinha(texto) {
+        const div = document.createElement('div');
+        div.className = 'linha-resultado';
+        div.textContent = texto;
+        divResultado.appendChild(div);
+      }
+
+      // EXERCÍCIO 1
+      adicionarTitulo("EXERCÍCIO 1");
+      let ex1 = [];
+      for (let i = 1; i <= 10; i++) {
+        ex1.push(i);
+      }
+      adicionarLinha(ex1.join(', '));
+
+      // EXERCÍCIO 2
+      adicionarTitulo("EXERCÍCIO 2");
+      let numero = 5;
+      for (let i = 1; i <= 10; i++) {
+        adicionarLinha(numero + " x " + i + " = " + (numero * i));
+      }
+
+      // EXERCÍCIO 3
+      adicionarTitulo("EXERCÍCIO 3");
+      let num3 = 1;
+      let soma3 = 0;
+      while (num3 <= 100) {
+        soma3 = soma3 + num3;
+        num3++;
+      }
+      adicionarLinha("A soma é: " + soma3);
+
+      // EXERCÍCIO 4
+      adicionarTitulo("EXERCÍCIO 4");
+      let num4 = 0;
+      let ex4 = [];
+      while (num4 <= 20) {
+        ex4.push(num4);
+        num4 = num4 + 2;
+      }
+      adicionarLinha(ex4.join(', '));
+
+      // EXERCÍCIO 5
+      adicionarTitulo("EXERCÍCIO 5");
+      let cont5 = 10;
+      let ex5 = [];
+      do {
+        ex5.push(cont5);
+        cont5--;
+      } while (cont5 >= 1);
+      adicionarLinha(ex5.join(', '));
+
+      // EXERCÍCIO 6
+      adicionarTitulo("EXERCÍCIO 6");
+      let usuario = {
+        nome: "Lucas",
+        idade: 25,
+        cidade: "Salvador"
+      };
+      for (let chave in usuario) {
+        adicionarLinha(chave + ": " + usuario[chave]);
+      }
+
+      // EXERCÍCIO 7
+      adicionarTitulo("EXERCÍCIO 7");
+      let notas = [7.0, 8.5, 9.0, 7.5];
+      let soma7 = 0;
+      for (let nota of notas) {
+        soma7 = soma7 + nota;
+      }
+      let media = soma7 / notas.length;
+      adicionarLinha("A média é: " + media);
+
+      // EXERCÍCIO 8
+      adicionarTitulo("EXERCÍCIO 8");
+      let ex8 = [];
+      for (let i = 1; i <= 50; i = i + 2) {
+        ex8.push(i);
+      }
+      adicionarLinha(ex8.join(', '));
+
+      // EXERCÍCIO 9
+      adicionarTitulo("EXERCÍCIO 9");
+      let ex9 = [];
+      for (let i = 10; i >= 0; i--) {
+        ex9.push(i);
+      }
+      adicionarLinha(ex9.join(', '));
+    });
+  </script>
 </body>
 </html>
